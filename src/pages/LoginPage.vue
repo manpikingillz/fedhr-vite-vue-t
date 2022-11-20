@@ -82,25 +82,39 @@ interface FormState {
 </script>
 
 <style lang="scss" scoped>
+
 .login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .login-card {
         border-radius: 0.5em;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         .login-header {
             font-weight: 600;
             font-size: x-large;
+            text-align: center;
 
             span.login-header-title-fed {
-                color: #1990FF
+                color: var(--antd-blue-color)
             }
             span.login-header-title-hr {
-                color: #FF4D4E
+                color: var(--antd-red-color)
             }
         }
         .login-header-detail {
             font-weight: 400;
             font-size: 24px;
             margin-bottom: 20px;
+            text-align: center;
         }
         .login-form {
             width: 400px;
