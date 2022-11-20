@@ -1,55 +1,62 @@
 <template>
-    <a-form
-    :model="formState"
-    name="normal_login"
-    class="login-form"
-    @finish="onFinish"
-    @finishFailed="onFinishFailed"
-  >
-    <a-form-item
-      label="Username"
-      name="username"
-      :rules="[{ required: true, message: 'Please input your username!' }]"
-    >
-      <a-input v-model:value="formState.username">
-        <template #prefix>
-          <UserOutlined class="site-form-item-icon" />
-        </template>
-      </a-input>
-    </a-form-item>
+    <div class="login-container">
+        <a-card class="login-card">
+            <div class="login-header"><span class="login-header-title-fed">Fed</span><span class="login-header-title-hr">HR</span></div>
+            <div class="login-header-detail">Login to your account</div>
+            <a-form
+                :model="formState"
+                layout="vertical"
+                name="normal_login"
+                class="login-form"
+                @finish="onFinish"
+                @finishFailed="onFinishFailed"
+            >
+                <a-form-item
+                label="Username"
+                name="username"
+                class="username-form-item"
+                :rules="[{ required: true, message: 'Please input your username!' }]"
+                >
+                <a-input
+                    v-model:value="formState.username"
+                    size="large"
+                    placeholder="Enter your username"
+                    class="username-form-input"
+                    >
+                </a-input>
+                </a-form-item>
 
-    <a-form-item
-      label="Password"
-      name="password"
-      :rules="[{ required: true, message: 'Please input your password!' }]"
-    >
-      <a-input-password v-model:value="formState.password">
-        <template #prefix>
-          <LockOutlined class="site-form-item-icon" />
-        </template>
-      </a-input-password>
-    </a-form-item>
-
-    <a-form-item>
-      <a-form-item name="remember" no-style>
-        <a-checkbox v-model:checked="formState.remember">Remember me</a-checkbox>
-      </a-form-item>
-      <a class="login-form-forgot" href="">Forgot password</a>
-    </a-form-item>
-
-    <a-form-item>
-      <a-button :disabled="disabled" type="primary" html-type="submit" class="login-form-button">
-        Log in
-      </a-button>
-      Or
-      <a href="">register now!</a>
-    </a-form-item>
-  </a-form>
+                <a-form-item
+                label="Password"
+                name="password"
+                class="password-form-item"
+                :rules="[{ required: true, message: 'Please input your password!' }]"
+                >
+                <a-input-password
+                    v-model:value="formState.password"
+                    size="large"
+                    placeholder="Enter your Password"
+                    class="password-form-input">
+                </a-input-password>
+                </a-form-item>
+                <a-form-item>
+                <a-button
+                    :disabled="disabled"
+                    type="primary"
+                    html-type="submit"
+                    class="login-form-button"
+                    size="large">
+                    Log in
+                </a-button>
+                </a-form-item>
+            </a-form>
+        </a-card>
+    </div>
 </template>
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { reactive, computed } from 'vue';
+import { reactive, ref, computed } from 'vue';
 
 interface FormState {
   username: string;
@@ -57,15 +64,15 @@ interface FormState {
   remember: boolean;
 }
 
-const formState = reactive<FormState>({
+    const formState = reactive<FormState>({
       username: '',
       password: '',
       remember: true,
     });
+
     const onFinish = (values: any) => {
       console.log('Success:', values);
     };
-
     const onFinishFailed = (errorInfo: any) => {
       console.log('Failed:', errorInfo);
     };
@@ -74,26 +81,44 @@ const formState = reactive<FormState>({
     });
 </script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style lang="scss" scoped>
+.login-container {
+    .login-card {
+        border-radius: 0.5em;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+        .login-header {
+            font-weight: 600;
+            font-size: x-large;
 
-#components-form-demo-normal-login .login-form {
-  max-width: 300px;
-}
-#components-form-demo-normal-login .login-form-forgot {
-  float: right;
-}
-#components-form-demo-normal-login .login-form-button {
-  width: 100%;
+            span.login-header-title-fed {
+                color: #1990FF
+            }
+            span.login-header-title-hr {
+                color: #FF4D4E
+            }
+        }
+        .login-header-detail {
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .login-form {
+            width: 400px;
+            .username-form-item {
+                .username-form-input {
+                    height: 50px;
+                }
+            }
+            .password-form-item {
+                .password-form-input {
+                    height: 50px;
+                }
+            }
+            .login-form-button {
+                width: 100%;
+                height: 50px;
+            }
+        }
+    }
 }
 </style>
