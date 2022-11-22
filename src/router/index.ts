@@ -18,6 +18,15 @@ const routes = [
 		},
 		exact: true,
 		component: () => import('../pages/LoginPage.vue')
+  },
+  {
+    path: '/employees',
+		name: 'employees',
+		meta: {
+			title: 'Employees'
+		},
+		exact: true,
+		component: () => import('../pages/EmployeesPage.vue')
   }
 ]
 

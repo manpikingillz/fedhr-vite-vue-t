@@ -7,16 +7,22 @@
       </div>
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="1">
-          <user-outlined />
-          <span>nav 1</span>
+          <router-link :to="{name: 'employees'}">
+            <user-outlined />
+            <span>Employees</span>
+          </router-link>
         </a-menu-item>
         <a-menu-item key="2">
-          <video-camera-outlined />
-          <span>nav 2</span>
+          <usergroup-add-outlined />
+          <span>Hiring</span>
         </a-menu-item>
         <a-menu-item key="3">
-          <upload-outlined />
-          <span>nav 3</span>
+          <field-time-outlined />
+          <span>TimeOff</span>
+        </a-menu-item>
+        <a-menu-item key="4">
+          <schedule-outlined />
+          <span>Scheduling</span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -33,7 +39,7 @@
       <a-layout-content
         :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
       >
-        Content
+        <router-view></router-view>
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -45,6 +51,9 @@ import {
   UploadOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
+  ScheduleOutlined,
+  FieldTimeOutlined,
+  UsergroupAddOutlined
 } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
@@ -54,6 +63,9 @@ export default defineComponent({
     UploadOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
+    ScheduleOutlined,
+    FieldTimeOutlined,
+    UsergroupAddOutlined
   },
   setup() {
     return {
