@@ -54,7 +54,11 @@
             <a-avatar class="user-avatar" size="large">
               <template #icon><UserOutlined /></template>
             </a-avatar>
-            <!-- <DownOutlined /> -->
+            <span class="user-dropdown-info">
+              <span class="user-dropdown-fullname">Gilbert Twesigomwe</span>
+              <!-- <span class="user-dropdown-jobtitle">Software Engineer</span> -->
+            </span>
+            <down-outlined class="user-dropdown-icon" />
           </a>
           <template #overlay>
             <a-menu>
@@ -147,6 +151,19 @@ selectedKeys.value = [route.meta.menuItemKey]
 
       .user-dropdown {
         margin-right: 16px;
+
+        .user-dropdown-info {
+          .user-dropdown-fullname {
+            margin-left: 5px;
+            font-weight: bold;
+          }
+          // .user-dropdown-jobtitle {
+          // }
+        }
+        .user-dropdown-icon {
+            margin-left: 4px;
+          }
+
       }
     }
   }
