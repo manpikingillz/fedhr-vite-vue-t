@@ -33,7 +33,9 @@ const routes = [
         path: '',
         name: 'dashboard',
         meta: {
-          title: 'Dashboard'
+          title: 'Dashboard',
+          // For aiding in menu selection, and should match menuItemKey
+          menuItemKey: 'dashboard'
         },
         exact: true,
         component: () => import('../pages/DashboardPage.vue')
@@ -42,7 +44,8 @@ const routes = [
         path: '/employees',
         name: 'employees',
         meta: {
-          title: 'Employees'
+          title: 'Employees',
+          menuItemKey: 'employees'
         },
         exact: true,
         component: () => import('../pages/EmployeesPage.vue')
@@ -51,7 +54,8 @@ const routes = [
         path: '/hiring',
         name: 'hiring',
         meta: {
-          title: 'Hiring'
+          title: 'Hiring',
+          menuItemKey: 'hiring'
         },
         exact: true,
         component: () => import('../pages/HiringPage.vue')
@@ -60,7 +64,8 @@ const routes = [
         path: '/timeoff',
         name: 'timeoff',
         meta: {
-          title: 'Time Off'
+          title: 'Time Off',
+          menuItemKey: 'timeoff'
         },
         exact: true,
         component: () => import('../pages/TimeOffPage.vue')
@@ -69,7 +74,8 @@ const routes = [
         path: '/scheduling',
         name: 'scheduling',
         meta: {
-          title: 'Scheduling'
+          title: 'Scheduling',
+          menuItemKey: 'scheduling'
         },
         exact: true,
         component: () => import('../pages/SchedulingPage.vue')
