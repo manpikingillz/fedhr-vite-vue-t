@@ -58,47 +58,28 @@
     </a-layout>
   </a-layout>
 </template>
-<script lang="ts">
+
+<script setup lang="ts">
 import {
   UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   ScheduleOutlined,
   FieldTimeOutlined,
   UsergroupAddOutlined
 } from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
+
+import { ref } from 'vue';
 import { useRoute } from 'vue-router'
 
-export default defineComponent({
-  components: {
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-    ScheduleOutlined,
-    FieldTimeOutlined,
-    UsergroupAddOutlined
-  },
+const selectedKeys = ref<string[]>(['dashboard'])
+const collapsed = ref<boolean>(false)
 
-  setup() {
-    const selectedKeys = ref<string[]>(['dashboard'])
+const route = useRoute()
+selectedKeys.value = [route.meta.menuItemKey]
 
-    const route = useRoute()
-    selectedKeys.value = [route.meta.menuItemKey]
-
-    return {
-      selectedKeys: selectedKeys,
-      collapsed: ref<boolean>(false),
-    };
-  },
-
-
-});
 </script>
+
 <style lang="scss">
 .layout-container {
   width: 100%;
