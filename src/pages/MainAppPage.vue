@@ -40,6 +40,7 @@
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
+
     <a-layout class="layout-header-content">
       <a-layout-header class="layout-header" style="background: #fff; padding: 0">
         <menu-unfold-outlined
@@ -48,6 +49,23 @@
           @click="() => (collapsed = !collapsed)"
         />
         <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+        <a-dropdown class="user-dropdown" :trigger="['click']">
+          <a class="ant-dropdown-link" @click.prevent>
+            <a-avatar class="user-avatar" size="large">
+              <template #icon><UserOutlined /></template>
+            </a-avatar>
+            <!-- <DownOutlined /> -->
+          </a>
+          <template #overlay>
+            <a-menu>
+              <a-menu-item key="0">
+                <a href="">Profile</a>
+              </a-menu-item>
+              <a-menu-divider />
+              <a-menu-item key="3">Logout</a-menu-item>
+            </a-menu>
+          </template>
+        </a-dropdown>
       </a-layout-header>
 
       <a-layout-content
@@ -56,6 +74,7 @@
         <router-view></router-view>
       </a-layout-content>
     </a-layout>
+
   </a-layout>
 </template>
 
@@ -66,7 +85,8 @@ import {
   MenuFoldOutlined,
   ScheduleOutlined,
   FieldTimeOutlined,
-  UsergroupAddOutlined
+  UsergroupAddOutlined,
+  DownOutlined
 } from '@ant-design/icons-vue';
 
 import { ref } from 'vue';
@@ -108,15 +128,26 @@ selectedKeys.value = [route.meta.menuItemKey]
   }
 
 
-  .layout-header-content .layout-header .trigger {
-    font-size: 18px;
-    line-height: 64px;
-    padding: 0 24px;
-    cursor: pointer;
-    transition: color 0.3s;
+  .layout-header-content {
+    .layout-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .trigger {
+        font-size: 18px;
+        line-height: 64px;
+        padding: 0 24px;
+        cursor: pointer;
+        transition: color 0.3s;
 
-    &:hover{
-      color: #1890ff;
+        &:hover{
+          color: #1890ff;
+        }
+      }
+
+      .user-dropdown {
+        margin-right: 16px;
+      }
     }
   }
 }
