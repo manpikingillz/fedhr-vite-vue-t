@@ -1,28 +1,42 @@
 <template>
   <a-layout class="layout-container">
     <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+      <router-link :to="{name: 'main'}">
       <div class="logo">
         <span class="fed" v-if="!collapsed">Fed</span><span class="hr" v-if="!collapsed">HR</span>
         <span class="fed-hr" v-if="collapsed">Fed</span>
       </div>
+      </router-link>
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <a-menu-item key="1">
+        <a-menu-item key="dashboard">
+          <router-link :to="{name: 'dashboard'}">
+            <user-outlined />
+            <span>Dashboard</span>
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="employees">
           <router-link :to="{name: 'employees'}">
             <user-outlined />
             <span>Employees</span>
           </router-link>
         </a-menu-item>
-        <a-menu-item key="2">
-          <usergroup-add-outlined />
-          <span>Hiring</span>
+        <a-menu-item key="hiring">
+          <router-link :to="{name: 'hiring'}">
+            <usergroup-add-outlined />
+            <span>Hiring</span>
+          </router-link>
         </a-menu-item>
-        <a-menu-item key="3">
-          <field-time-outlined />
-          <span>TimeOff</span>
+        <a-menu-item key="timeoff">
+          <router-link :to="{name: 'timeoff'}">
+            <field-time-outlined />
+            <span>TimeOff</span>
+          </router-link>
         </a-menu-item>
-        <a-menu-item key="4">
-          <schedule-outlined />
-          <span>Scheduling</span>
+        <a-menu-item key="scheduling">
+          <router-link :to="{name: 'scheduling'}">
+            <schedule-outlined />
+            <span>Scheduling</span>
+          </router-link>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>

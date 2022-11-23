@@ -1,14 +1,13 @@
 <template>
     <div>
-       <h1>Employees Page </h1>
+        <h1>Dashboard Page</h1>
     </div>
 </template>
-
 <script lang="ts">
 export default {
     
 }
 </script>
-<style lang="scss">
+<style lang="">
     
 </style>

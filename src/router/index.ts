@@ -1,14 +1,16 @@
 // import Login from '@pages/Login.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomePage from '@/pages/HomePage.vue'
+import MainAppPage from '@/pages/MainAppPage.vue';
+import LandingPage from '@/pages/LandingPage.vue';
+
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'landing',
     meta: {
-			title: 'Home'
+			title: 'Landing'
 		},
-    component: HomePage
+    component: LandingPage,
   },
   {
     path: '/login',
@@ -20,14 +22,60 @@ const routes = [
 		component: () => import('../pages/LoginPage.vue')
   },
   {
-    path: '/employees',
-		name: 'employees',
-		meta: {
-			title: 'Employees'
+    path: '/main',
+    name: 'main',
+    meta: {
+			title: 'Main'
 		},
-		exact: true,
-		component: () => import('../pages/EmployeesPage.vue')
-  }
+    component: MainAppPage,
+    children: [
+      {
+        path: '',
+        name: 'dashboard',
+        meta: {
+          title: 'Dashboard'
+        },
+        exact: true,
+        component: () => import('../pages/DashboardPage.vue')
+      },
+      {
+        path: '/employees',
+        name: 'employees',
+        meta: {
+          title: 'Employees'
+        },
+        exact: true,
+        component: () => import('../pages/EmployeesPage.vue')
+      },
+      {
+        path: '/hiring',
+        name: 'hiring',
+        meta: {
+          title: 'Hiring'
+        },
+        exact: true,
+        component: () => import('../pages/HiringPage.vue')
+      },
+      {
+        path: '/timeoff',
+        name: 'timeoff',
+        meta: {
+          title: 'Time Off'
+        },
+        exact: true,
+        component: () => import('../pages/TimeOffPage.vue')
+      },
+      {
+        path: '/scheduling',
+        name: 'scheduling',
+        meta: {
+          title: 'Scheduling'
+        },
+        exact: true,
+        component: () => import('../pages/SchedulingPage.vue')
+      }
+    ]
+  },
 ]
 
 const router = createRouter({
