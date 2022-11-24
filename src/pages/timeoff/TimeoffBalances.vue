@@ -1,6 +1,6 @@
 <template lang="">
     <div class="section-header">
-        <span>Timeoff Overview</span>
+        <span>Balances</span>
     </div>
 </template>
 <script lang="ts">

@@ -75,7 +75,8 @@ const routes = [
             name: 'overview',
             meta: {
               title: 'Timeoff Overview',
-              menuItemKey: 'timeoff'
+              menuItemKey: 'timeoff',
+              tabMenuItemKey: 'overview'
             },
             exact: true,
             component: () => import('../pages/timeoff/TimeoffOverview.vue')
@@ -85,10 +86,44 @@ const routes = [
             name: 'requests',
             meta: {
               title: 'Timeoff Requests',
-              menuItemKey: 'timeoff'
+              menuItemKey: 'timeoff',
+              tabMenuItemKey: 'requests'
             },
             exact: true,
-            component: () => import('../pages/timeoff/TimeffRequests.vue')
+            component: () => import('../pages/timeoff/TimeoffRequests.vue')
+          },
+          {
+            path: '/balances',
+            name: 'balances',
+            meta: {
+              title: 'Timeoff Balances',
+              menuItemKey: 'timeoff',
+              tabMenuItemKey: 'balances'
+            },
+            exact: true,
+            component: () => import('../pages/timeoff/TimeoffBalances.vue')
+          },
+          {
+            path: '/reports',
+            name: 'reports',
+            meta: {
+              title: 'Timeoff Reports',
+              menuItemKey: 'timeoff',
+              tabMenuItemKey: 'reports'
+            },
+            exact: true,
+            component: () => import('../pages/timeoff/TimeoffReports.vue')
+          },
+          {
+            path: '/settings',
+            name: 'settings',
+            meta: {
+              title: 'Timeoff Settings',
+              menuItemKey: 'timeoff',
+              tabMenuItemKey: 'settings'
+            },
+            exact: true,
+            component: () => import('../pages/timeoff/TimeoffSettings.vue')
           }
         ]
       },

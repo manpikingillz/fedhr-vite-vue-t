@@ -17,32 +17,48 @@
         </router-link>
       </a-menu-item>
       <a-menu-item key="balances">
-        <template #icon>
-          <appstore-outlined />
-        </template>
-        Balances
+        <router-link :to="{name: 'balances'}">
+          <template #icon>
+            <appstore-outlined />
+          </template>
+          Balances
+        </router-link>
       </a-menu-item>
       <a-menu-item key="reports">
-        <template #icon>
-          <appstore-outlined />
-        </template>
-        Reports
+        <router-link :to="{name: 'reports'}">
+          <template #icon>
+            <appstore-outlined />
+          </template>
+          Reports
+        </router-link>
       </a-menu-item>
       <a-menu-item key="settings">
-        <template #icon>
-          <appstore-outlined />
-        </template>
-        Settings
+        <router-link :to="{name: 'settings'}">
+          <template #icon>
+            <appstore-outlined />
+          </template>
+          Settings
+        </router-link>
       </a-menu-item>
     </a-menu>
 
-    <div>
-      Timeoff
+    <div class="content-section">
       <router-view></router-view>
     </div>
   </template>
+
   <script setup lang="ts">
     import { ref } from 'vue';
-    import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+    import { useRoute } from 'vue-router';
+    import { MailOutlined, AppstoreOutlined } from '@ant-design/icons-vue';
     const current = ref<string[]>(['mail']);
+
+    const route = useRoute()
+    current.value = [route.meta.tabMenuItemKey]
   </script>
+
+<style lang="scss">
+  .content-section {
+    margin: 16px 16px;
+  }
+</style>

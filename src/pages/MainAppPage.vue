@@ -72,9 +72,7 @@
         </a-dropdown>
       </a-layout-header>
 
-      <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-      >
+      <a-layout-content class="layout-content">
         <router-view></router-view>
       </a-layout-content>
     </a-layout>
@@ -165,6 +163,12 @@ selectedKeys.value = [route.meta.menuItemKey]
           }
 
       }
+    }
+
+    .layout-content {
+      background: #fff;
+      min-height: 280px;
+      background-color: #EFF2F5;
     }
   }
 }
