@@ -68,7 +68,29 @@ const routes = [
           menuItemKey: 'timeoff'
         },
         exact: true,
-        component: () => import('../pages/TimeOffPage.vue')
+        component: () => import('../pages/timeoff/TimeOffPage.vue'),
+        children: [
+          {
+            path: '/overview',
+            name: 'overview',
+            meta: {
+              title: 'Timeoff Overview',
+              menuItemKey: 'timeoff'
+            },
+            exact: true,
+            component: () => import('../pages/timeoff/TimeoffOverview.vue')
+          },
+          {
+            path: '/requests',
+            name: 'requests',
+            meta: {
+              title: 'Timeoff Requests',
+              menuItemKey: 'timeoff'
+            },
+            exact: true,
+            component: () => import('../pages/timeoff/TimeffRequests.vue')
+          }
+        ]
       },
       {
         path: '/scheduling',

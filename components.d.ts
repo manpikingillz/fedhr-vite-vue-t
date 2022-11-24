@@ -26,6 +26,8 @@ declare module '@vue/runtime-core' {
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuDivider: typeof import('ant-design-vue/es')['MenuDivider']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    AMenuItemGroup: typeof import('ant-design-vue/es')['MenuItemGroup']
+    ASubMenu: typeof import('ant-design-vue/es')['SubMenu']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

@@ -1,6 +1,6 @@
-<template>
+<template lang="">
     <div>
-        <h1>Employees Page</h1>
+        <h1>Timeoff Requests</h1>
     </div>
 </template>
 <script lang="ts">

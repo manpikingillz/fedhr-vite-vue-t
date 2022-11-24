@@ -1,6 +1,6 @@
-<template>
+<template lang="">
     <div>
-       <h1>TimeOff Page</h1>
+        <h1>Timeoff Overview</h1>
     </div>
 </template>
 <script lang="ts">
