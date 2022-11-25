@@ -93,7 +93,31 @@ const routes = [
           menuItemKey: 'hiring'
         },
         exact: true,
-        component: () => import('../pages/HiringPage.vue')
+        component: () => import('../pages/hiring/HiringPage.vue'),
+        children: [
+          {
+            path: '/hiring-overview',
+            name: 'hiring-overview',
+            meta: {
+              title: 'Hiring Overview',
+              menuItemKey: 'hiring',
+              tabMenuItemKey: 'overview'
+            },
+            exact: true,
+            component: () => import('../pages/hiring/HiringOverview.vue')
+          },
+          {
+            path: '/hiring-settings',
+            name: 'hiring-settings',
+            meta: {
+              title: 'Hiring Settings',
+              menuItemKey: 'hiring',
+              tabMenuItemKey: 'settings'
+            },
+            exact: true,
+            component: () => import('../pages/hiring/HiringSettings.vue')
+          },
+        ]
       },
       {
         path: '/timeoff',
