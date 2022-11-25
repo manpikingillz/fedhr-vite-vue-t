@@ -48,7 +48,42 @@ const routes = [
           menuItemKey: 'employees'
         },
         exact: true,
-        component: () => import('../pages/EmployeesPage.vue')
+        component: () => import('../pages/employees/EmployeesPage.vue'),
+        children: [
+          {
+            path: '/employees-overview',
+            name: 'employees-overview',
+            meta: {
+              title: 'Employees Overview',
+              menuItemKey: 'employees',
+              tabMenuItemKey: 'overview'
+            },
+            exact: true,
+            component: () => import('../pages/employees/EmployeesOverview.vue')
+          },
+          {
+            path: '/employees-orgchart',
+            name: 'employees-orgchart',
+            meta: {
+              title: 'Employees Org Chart',
+              menuItemKey: 'employees',
+              tabMenuItemKey: 'orgchart'
+            },
+            exact: true,
+            component: () => import('../pages/employees/EmployeesOrgChart.vue')
+          },
+          {
+            path: '/employees-approver-settings',
+            name: 'employees-approver-settings',
+            meta: {
+              title: 'Employees Approver Settings',
+              menuItemKey: 'employees',
+              tabMenuItemKey: 'approver-settings'
+            },
+            exact: true,
+            component: () => import('../pages/employees/EmployeesApproverSettings.vue')
+          },
+        ]
       },
       {
         path: '/hiring',
