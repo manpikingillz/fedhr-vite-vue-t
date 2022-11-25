@@ -194,7 +194,42 @@ const routes = [
           menuItemKey: 'scheduling'
         },
         exact: true,
-        component: () => import('../pages/SchedulingPage.vue')
+        component: () => import('../pages/scheduling/SchedulingPage.vue'),
+        children: [
+          {
+            path: '/scheduling-overview',
+            name: 'scheduling-overview',
+            meta: {
+              title: 'Scheduling Overview',
+              menuItemKey: 'scheduling',
+              tabMenuItemKey: 'overview'
+            },
+            exact: true,
+            component: () => import('../pages/scheduling/SchedulingOverview.vue')
+          },
+          {
+            path: '/scheduling-reports',
+            name: 'scheduling-reports',
+            meta: {
+              title: 'Scheduling Reports',
+              menuItemKey: 'scheduling',
+              tabMenuItemKey: 'reports'
+            },
+            exact: true,
+            component: () => import('../pages/scheduling/SchedulingReports.vue')
+          },
+          {
+            path: '/scheduling-settings',
+            name: 'scheduling-settings',
+            meta: {
+              title: 'Scheduling Settings',
+              menuItemKey: 'scheduling',
+              tabMenuItemKey: 'settings'
+            },
+            exact: true,
+            component: () => import('../pages/scheduling/SchedulingSettings.vue')
+          },
+        ]
       }
     ]
   },
