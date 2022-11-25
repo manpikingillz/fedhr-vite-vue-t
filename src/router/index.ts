@@ -41,7 +41,7 @@ const routes = [
         component: () => import('../pages/DashboardPage.vue')
       },
       {
-        path: '/employees',
+        path: '/main/employees',
         name: 'employees',
         meta: {
           title: 'Employees',
@@ -51,7 +51,7 @@ const routes = [
         component: () => import('../pages/employees/EmployeesPage.vue'),
         children: [
           {
-            path: '/employees-overview',
+            path: '/main/employees/employees-overview',
             name: 'employees-overview',
             meta: {
               title: 'Employees Overview',
@@ -62,7 +62,7 @@ const routes = [
             component: () => import('../pages/employees/EmployeesOverview.vue')
           },
           {
-            path: '/employees-orgchart',
+            path: '/main/employees/employees-orgchart',
             name: 'employees-orgchart',
             meta: {
               title: 'Employees Org Chart',
@@ -73,7 +73,7 @@ const routes = [
             component: () => import('../pages/employees/EmployeesOrgChart.vue')
           },
           {
-            path: '/employees-approver-settings',
+            path: '/main/employees/employees-approver-settings',
             name: 'employees-approver-settings',
             meta: {
               title: 'Employees Approver Settings',
@@ -86,7 +86,7 @@ const routes = [
         ]
       },
       {
-        path: '/hiring',
+        path: '/main/hiring',
         name: 'hiring',
         meta: {
           title: 'Hiring',
@@ -96,7 +96,7 @@ const routes = [
         component: () => import('../pages/hiring/HiringPage.vue'),
         children: [
           {
-            path: '/hiring-overview',
+            path: '/main/hiring/hiring-overview',
             name: 'hiring-overview',
             meta: {
               title: 'Hiring Overview',
@@ -107,7 +107,7 @@ const routes = [
             component: () => import('../pages/hiring/HiringOverview.vue')
           },
           {
-            path: '/hiring-settings',
+            path: '/main/hiring/hiring-settings',
             name: 'hiring-settings',
             meta: {
               title: 'Hiring Settings',
@@ -120,7 +120,7 @@ const routes = [
         ]
       },
       {
-        path: '/timeoff',
+        path: '/main/timeoff',
         name: 'timeoff',
         meta: {
           title: 'Time Off',
@@ -130,8 +130,8 @@ const routes = [
         component: () => import('../pages/timeoff/TimeOffPage.vue'),
         children: [
           {
-            path: '/overview',
-            name: 'overview',
+            path: '/main/timeoff/timeoff-overview',
+            name: 'timeoff-overview',
             meta: {
               title: 'Timeoff Overview',
               menuItemKey: 'timeoff',
@@ -141,8 +141,8 @@ const routes = [
             component: () => import('../pages/timeoff/TimeoffOverview.vue')
           },
           {
-            path: '/requests',
-            name: 'requests',
+            path: '/main/timeoff/timeoff-requests',
+            name: 'timeoff-requests',
             meta: {
               title: 'Timeoff Requests',
               menuItemKey: 'timeoff',
@@ -152,8 +152,8 @@ const routes = [
             component: () => import('../pages/timeoff/TimeoffRequests.vue')
           },
           {
-            path: '/balances',
-            name: 'balances',
+            path: '/main/timeoff/timeoff-balances',
+            name: 'timeoff-balances',
             meta: {
               title: 'Timeoff Balances',
               menuItemKey: 'timeoff',
@@ -163,8 +163,8 @@ const routes = [
             component: () => import('../pages/timeoff/TimeoffBalances.vue')
           },
           {
-            path: '/reports',
-            name: 'reports',
+            path: '/main/timeoff/timeoff-reports',
+            name: 'timeoff-reports',
             meta: {
               title: 'Timeoff Reports',
               menuItemKey: 'timeoff',
@@ -174,8 +174,8 @@ const routes = [
             component: () => import('../pages/timeoff/TimeoffReports.vue')
           },
           {
-            path: '/settings',
-            name: 'settings',
+            path: '/main/timeoff/timeoff-settings',
+            name: 'timeoff-settings',
             meta: {
               title: 'Timeoff Settings',
               menuItemKey: 'timeoff',
@@ -187,7 +187,7 @@ const routes = [
         ]
       },
       {
-        path: '/scheduling',
+        path: '/main/scheduling',
         name: 'scheduling',
         meta: {
           title: 'Scheduling',
@@ -197,7 +197,7 @@ const routes = [
         component: () => import('../pages/scheduling/SchedulingPage.vue'),
         children: [
           {
-            path: '/scheduling-overview',
+            path: '/main/scheduling/scheduling-overview',
             name: 'scheduling-overview',
             meta: {
               title: 'Scheduling Overview',
@@ -208,7 +208,7 @@ const routes = [
             component: () => import('../pages/scheduling/SchedulingOverview.vue')
           },
           {
-            path: '/scheduling-reports',
+            path: '/main/scheduling/scheduling-reports',
             name: 'scheduling-reports',
             meta: {
               title: 'Scheduling Reports',
@@ -219,7 +219,7 @@ const routes = [
             component: () => import('../pages/scheduling/SchedulingReports.vue')
           },
           {
-            path: '/scheduling-settings',
+            path: '/main/scheduling/scheduling-settings',
             name: 'scheduling-settings',
             meta: {
               title: 'Scheduling Settings',

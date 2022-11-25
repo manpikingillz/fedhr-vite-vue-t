@@ -1,7 +1,7 @@
 <template>
     <a-menu v-model:selectedKeys="current" mode="horizontal">
       <a-menu-item key="overview">
-      <router-link :to="{name: 'overview'}">
+      <router-link :to="{name: 'timeoff-overview'}">
         <template #icon>
           <mail-outlined />
         </template>
@@ -9,7 +9,7 @@
       </router-link>
       </a-menu-item>
       <a-menu-item key="requests">
-        <router-link :to="{name: 'requests'}">
+        <router-link :to="{name: 'timeoff-requests'}">
           <template #icon>
             <appstore-outlined />
           </template>
@@ -17,7 +17,7 @@
         </router-link>
       </a-menu-item>
       <a-menu-item key="balances">
-        <router-link :to="{name: 'balances'}">
+        <router-link :to="{name: 'timeoff-balances'}">
           <template #icon>
             <appstore-outlined />
           </template>
@@ -25,7 +25,7 @@
         </router-link>
       </a-menu-item>
       <a-menu-item key="reports">
-        <router-link :to="{name: 'reports'}">
+        <router-link :to="{name: 'timeoff-reports'}">
           <template #icon>
             <appstore-outlined />
           </template>
@@ -33,7 +33,7 @@
         </router-link>
       </a-menu-item>
       <a-menu-item key="settings">
-        <router-link :to="{name: 'settings'}">
+        <router-link :to="{name: 'timeoff-settings'}">
           <template #icon>
             <appstore-outlined />
           </template>
