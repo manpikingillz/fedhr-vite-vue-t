@@ -1,1 +1,0 @@
-import{b4 as e,aY as s,aZ as t,a_ as o}from"./index.08e809af.js";const n={};const _={class:"section-header"},a=o("span",null,"Approver Settings",-1),r=[a];function c(p,i,d,l,u,f){return s(),t("div",_,r)}const v=e(n,[["render",c]]);export{v as default};

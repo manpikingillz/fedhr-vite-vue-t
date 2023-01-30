@@ -1,1 +1,0 @@
-import{b4 as e,aY as a,aZ as s,a_ as o}from"./index.08e809af.js";const t={},_={class:"dashboard-section"},c=o("h1",null,"Dashboard Page",-1),n=[c];function r(d,h){return a(),s("div",_,n)}const l=e(t,[["render",r]]);export{l as default};
