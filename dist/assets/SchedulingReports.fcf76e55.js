@@ -1,0 +1,1 @@
+import{b4 as e,aY as s,aZ as t,a_ as o}from"./index.08e809af.js";const n={};const _={class:"section-header"},c=o("span",null,"Reports",-1),a=[c];function r(d,p,i,l,u,h){return s(),t("div",_,a)}const m=e(n,[["render",r]]);export{m as default};

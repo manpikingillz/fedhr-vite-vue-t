@@ -1,0 +1,1 @@
+import{b4 as e,aY as s,aZ as t,a_ as o}from"./index.08e809af.js";const a={};const _={class:"section-header"},n=o("span",null,"Org Chart",-1),r=[n];function c(p,d,l,i,h,u){return s(),t("div",_,r)}const m=e(a,[["render",c]]);export{m as default};
