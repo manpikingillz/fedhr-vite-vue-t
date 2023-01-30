@@ -2,7 +2,7 @@
     <a-menu v-model:selectedKeys="current" mode="horizontal">
       <a-menu-item key="overview">
       <router-link :to="{name: 'employees-overview'}">
-        <template #icon>
+        <template>
           <mail-outlined />
         </template>
         Overview
@@ -10,7 +10,7 @@
       </a-menu-item>
       <a-menu-item key="orgchart">
         <router-link :to="{name: 'employees-orgchart'}">
-          <template #icon>
+          <template>
             <appstore-outlined />
           </template>
           Org Chart
@@ -18,7 +18,7 @@
       </a-menu-item>
       <a-menu-item key="approver-settings">
         <router-link :to="{name: 'employees-approver-settings'}">
-          <template #icon>
+          <template>
             <appstore-outlined />
           </template>
           Approver Settings
@@ -37,7 +37,7 @@
     const current = ref<string[]>(['mail']);
 
     const route = useRoute()
-    current.value = [route.meta.tabMenuItemKey]
+    current.value = [route.meta.tabMenuItemKey as string]
   </script>
 
 <style lang="scss">

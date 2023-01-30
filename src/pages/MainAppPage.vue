@@ -52,7 +52,7 @@
         <a-dropdown class="user-dropdown" :trigger="['click']">
           <a class="ant-dropdown-link" @click.prevent>
             <a-avatar class="user-avatar" size="large">
-              <template #icon><UserOutlined /></template>
+              <template><UserOutlined /></template>
             </a-avatar>
             <span class="user-dropdown-info">
               <span class="user-dropdown-fullname">Gilbert Twesigomwe</span>
@@ -98,7 +98,7 @@ const selectedKeys = ref<string[]>(['dashboard'])
 const collapsed = ref<boolean>(false)
 
 const route = useRoute()
-selectedKeys.value = [route.meta.menuItemKey]
+selectedKeys.value = [route.meta.menuItemKey as string]
 
 </script>
 

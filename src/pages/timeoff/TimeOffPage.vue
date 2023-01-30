@@ -2,7 +2,7 @@
     <a-menu v-model:selectedKeys="current" mode="horizontal">
       <a-menu-item key="overview">
       <router-link :to="{name: 'timeoff-overview'}">
-        <template #icon>
+        <template>
           <mail-outlined />
         </template>
         Overview
@@ -10,7 +10,7 @@
       </a-menu-item>
       <a-menu-item key="requests">
         <router-link :to="{name: 'timeoff-requests'}">
-          <template #icon>
+          <template>
             <appstore-outlined />
           </template>
           Requests
@@ -18,7 +18,7 @@
       </a-menu-item>
       <a-menu-item key="balances">
         <router-link :to="{name: 'timeoff-balances'}">
-          <template #icon>
+          <template>
             <appstore-outlined />
           </template>
           Balances
@@ -26,7 +26,7 @@
       </a-menu-item>
       <a-menu-item key="reports">
         <router-link :to="{name: 'timeoff-reports'}">
-          <template #icon>
+          <template>
             <appstore-outlined />
           </template>
           Reports
@@ -34,7 +34,7 @@
       </a-menu-item>
       <a-menu-item key="settings">
         <router-link :to="{name: 'timeoff-settings'}">
-          <template #icon>
+          <template>
             <appstore-outlined />
           </template>
           Settings
@@ -54,7 +54,7 @@
     const current = ref<string[]>(['mail']);
 
     const route = useRoute()
-    current.value = [route.meta.tabMenuItemKey]
+    current.value = [route.meta.tabMenuItemKey as string]
   </script>
 
 <style lang="scss">
